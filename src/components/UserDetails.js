@@ -12,6 +12,7 @@ class UserDetails extends Component {
   handleLogout(e){
     e.preventDefault();
     this.props.logout()
+
   }
 
   render() {

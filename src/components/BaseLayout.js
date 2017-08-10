@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {logout} from '../actions/actions.js'
+
 
 class BaseLayout extends Component {
 
@@ -25,7 +25,7 @@ class BaseLayout extends Component {
                 <NavLink className="nav-link" to="/login">Login</NavLink>
               </li>
             </ul>
-      
+
           </div>
         </nav>
         <div>

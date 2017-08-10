@@ -45,7 +45,7 @@ export const logout = (token) => {
   console.log('in the action logout function')
   return (dispatch) => {
     Cookies.remove('token');
-    dispatch(setToken(null))
+    dispatch(userLogin(null))
   }
 }
 
