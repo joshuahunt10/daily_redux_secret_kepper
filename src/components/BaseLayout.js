@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {logout} from '../actions/actions.js'
 
 class BaseLayout extends Component {
 
@@ -12,7 +14,7 @@ class BaseLayout extends Component {
           </button>
           <NavLink className="navbar-brand" to="/">Shhh...</NavLink>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
                 <NavLink className="nav-link" to="/">Home <span className="sr-only">(current)</span></NavLink>
               </li>
@@ -23,6 +25,7 @@ class BaseLayout extends Component {
                 <NavLink className="nav-link" to="/login">Login</NavLink>
               </li>
             </ul>
+      
           </div>
         </nav>
         <div>
@@ -36,4 +39,5 @@ class BaseLayout extends Component {
 }
 
 
-export default BaseLayout;
+
+export default (BaseLayout);

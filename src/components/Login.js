@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {login} from '../actions/actions.js'
+import {login, setToken} from '../actions/actions.js'
 import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
@@ -41,13 +41,11 @@ class Login extends Component {
   render() {
     let info = null
     if(this.props.user.user){
-      info = (
-        <p>{this.props.user.user.full_name}</p>
-      )
+      return <Redirect to='/userdetails' />
     }
     return (
-      <div>
-        {info}
+      <div className="container">
+
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="InputEmail">Email address</label>

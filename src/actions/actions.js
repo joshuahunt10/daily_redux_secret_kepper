@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 
 export const SET_TOKEN = 'SET_TOKEN'
 export const USER = 'USER'
+export const DEL_TOKEN = 'DEL_TOKEN'
 
 export function userLogin(userInfo){
   return{
@@ -18,6 +19,13 @@ export function setToken(token){
   }
 }
 
+// export function logout(token){
+//   return{
+//     type: DEL_TOKEN,
+//     payload: token
+//   }
+// }
+
 export const login = (email, password, callback) => {
   return(dispatch, getState) =>{
     request
@@ -30,6 +38,14 @@ export const login = (email, password, callback) => {
         Cookies.set('token', res.body.auth_token, {expires: 7})
         callback()
       })
+  }
+}
+
+export const logout = (token) => {
+  console.log('in the action logout function')
+  return (dispatch) => {
+    Cookies.remove('token');
+    dispatch(setToken(null))
   }
 }
 
